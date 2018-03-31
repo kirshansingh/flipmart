@@ -1,0 +1,185 @@
+/*
+Theme Name: Flipmart 
+Theme URI: www.ckthemes.com/flipmart/
+Author: CKThemes
+Author URI: http://www.ckthemes.com/
+Description: Flipmart is a modern, clean and professional WordPress Woocommerce Theme, It is fully responsive, it looks stunning on all types of screens and devices. It is super for fashion shop, digital shop, games shop, food shop, devices shop, household appliances shop or any other categories.
+Version: 1.7
+License: Commercial
+License URI: http://themeforest.net/licenses/regular_extended
+Tags: two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: flipmart
+*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Galleries */
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/* Table */
+table {
+	width: 100%;
+	margin: 0 0 10px 0;
+	border-collapse: collapse;
+}
+
+table tbody tr:not(:first-child) {
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+thead {
+	background-color: #0f6cb2;
+	color: #fff;
+}
+
+td, th {
+	padding: 5px 5px;
+}
+
+.table thead,
+.woocommerce-products-header{
+    background-color: transparent!important;
+}
+
+/* Definition Lists */
+dt {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+dd {
+	margin-bottom: 20px;
+}
+
+/* image */
+.textwidget img,
+img.alignnone{
+    width: 100%;
+}
+
+.twitter-tweet-rendered {
+    max-width: 100% !important;
+}
+
+/* post form  */
+.post-password-form input[type="submit"] {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #ffffff !important;
+    border-color: #0f6cb2;
+    background-color: #0f6cb2;
+}
+
+.post-password-form input[type="password"] {
+    height: 32px;
+}
+
+/* sticky post  */
+.sticky,
+.tag-sticky-2{
+    -moz-box-shadow: 0 0 5px 5px #888!important;
+     -webkit-box-shadow: 0 0 5px 5px#888!important;
+     box-shadow: 0 0 5px 5px #888!important;
+}
+
+/* extra class  */
+.wp-caption,
+.wp-caption-text,
+.bypostauthor,
+.alignright,
+.alignleft,
+.aligncenter{
+    text-decoration: none;
+}

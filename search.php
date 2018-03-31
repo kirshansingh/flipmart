@@ -1,0 +1,155 @@
+<?php
+/**
+ * The template for displaying search results pages.
+ *
+ * @package WordPress
+ * @subpackage Flipmart
+ * @since Flipmart 1.0
+ */
+ 
+ get_header(); 
+    
+    //Breadcrumb
+    get_template_part('templates/page/breadcrumb');
+    
+    //Search Layout.  
+    $yog_sidebar = yog_helper()->get_option( 'blog-search-enable-global', 'raw', false, 'options' ); 
+    $yog_layout  = yog_helper()->get_option( 'search-sidebar-position', 'raw', 'right', 'options' );
+    $yog_layout  = ( isset( $yog_sidebar ) && !empty( $yog_sidebar ) )? $yog_layout : 'full';
+    $yog_class   = array( 'full' => 'col-md-12', 'left' => 'col-md-9', 'right' => 'col-md-9' );
+
+    ?>
+     <div class="container">
+           <div class="blog-page">
+             <div class="row">
+         
+                <?php if( 'left' == $yog_layout && isset( $yog_sidebar ) && !empty( $yog_sidebar ) ){ ?>
+                    <div class="col-md-3 sidebar">
+                        <div class="sidebar-module-container">
+                            <?php 
+                                if( is_active_sidebar( yog_helper()->get_option( 'search-sidebar', 'raw', 'primary', 'options' ) ) ):
+                                    dynamic_sidebar( yog_helper()->get_option( 'search-sidebar', 'raw', 'primary', 'options' ) ); 
+                                endif;
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
+        
+                <div class="<?php echo esc_attr( $yog_class[$yog_layout] ); ?>">
+                    <?php
+                        if ( have_posts() ) :
+                        
+                            //Animation
+                            $yog_animation = ( yog_helper()->get_option( 'blog-animation', 'raw', false, 'options' ) )? yog_helper()->get_option( 'blog-animation', 'raw', false, 'options' ) : '';
+                            $yog_delay     = ( yog_helper()->get_option( 'blog-delay', 'raw', false, 'options' ) )? yog_helper()->get_option( 'blog-delay', 'raw', false, 'options' ) : '';
+                            
+                            
+                            if( class_exists('Woocommerce') ){
+                                    
+                                //Loop Start    
+                                woocommerce_product_loop_start();
+                                    
+                                    // Start the loop.
+            		                while ( have_posts() ) : the_post();
+                                        
+                                        //Content
+                                        wc_get_template_part( 'content', 'product' );
+                                    
+                                    endwhile;
+                                     
+                                //Loop End
+                                woocommerce_product_loop_end();
+                                                         
+                            }else{
+                                
+                                //Counter
+                                $yog_counter = 1;
+                                
+                                // Start the loop.
+                        		while ( have_posts() ) : the_post();
+                                      
+                                    //Class
+                                    $yog_extra_class = ( $yog_counter != 1 )? 'blog-post outer-top-bd' : 'blog-post';
+                                    ?>
+                                    
+                                	<div <?php yog_helper()->attr( 'post', array( 'class' => $yog_extra_class, 'data-animation' => $yog_animation, 'data-animation-delay' => $yog_delay ) ); ?>>
+                                        
+                                        <?php 
+                                            //Image
+                                            if( has_post_thumbnail() ):
+                                                printf( '<a href="%s">%s</a>', get_permalink(), get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'img-responsive' ) ) );
+                                            endif;
+                                            
+                                            //Title
+                                            the_title( '<h1><a href="'. get_permalink() .'">', '</a></h1>' ); 
+                                            
+                                            //Author
+                                            printf( '<span class="author"><a href="%s">%s</a></span>', get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ), get_the_author() );
+                
+                                            //Comments
+                                            $yog_num_comments = get_comments_number(); 
+                                            if( $yog_num_comments != 1 ){
+                                                printf( '<span class="review"><a href="%s">%s %s</a></span>', get_comments_link(), number_format_i18n( $yog_num_comments ), esc_html( yog_get_translation( 'tr-blog-comments' ) ) );
+                                            }else{
+                                                printf( '<span class="review"><a href="%s">%s %s</a></span>', get_comments_link(), number_format_i18n( $yog_num_comments ), esc_html( yog_get_translation( 'tr-blog-comment' ) ));
+                                            }
+                                            
+                                            //Date
+                                            printf( '<span class="date-time"><a href="%s">%s</a></span>', get_permalink(), get_the_time( get_option( 'date_format' ) ) );
+                                            
+                                             //Excerpt
+                                            echo yog_get_excerpt( array( 'yog_before_text' => '<div class="post-content"><p>', 'yog_after_text' => '</p></div>', 'yog_class' => 'btn btn-upper btn-primary read-more' ) );
+                                        
+                                            //Page Pagination
+                                            wp_link_pages( array(
+                                				'before'      => '<div class="clearfix blog-pagination filters-container"><div class="text-right"><div class="pagination-container"><ul class="list-inline list-unstyled"><li>',
+                                				'after'       => '</li></ul></div></div></div>',
+                                				'link_before'      => '',
+                                                'link_after'       => '',
+                                                'next_or_number'   => 'number',
+                                                'separator'        => '</li><li>',
+                                                'nextpagelink'     =>   esc_html__( 'Next', 'flipmart' ),
+                                                'previouspagelink' =>   esc_html__( 'Previous', 'flipmart' ),
+                                                'pagelink'         => '%',
+                                			) );
+                                        ?>
+                                        
+                                    </div>
+                                    
+                                    <?php
+                                    
+                                    //Counter
+                                    $yog_counter++;
+                        
+                        		// End the loop.
+                        		endwhile;
+                            }
+                            
+                            //Pagination
+                            yog_wp_paginate( array( 'before' => '<div class="clearfix blog-pagination filters-container" '. yog_helper()->get_attr( false, array( 'data-animation' => $yog_animation, 'data-animation-daley' => $yog_delay ) ) .'><div class="text-right"><div class="pagination-container">', 'after' => '</div></div></div>', 'class' => 'list-inline list-unstyled', 'title' => false, 'nextpage' => '<i class="fa fa-angle-right"></i>', 'previouspage' => '<i class="fa fa-angle-left"></i>' ) );    
+                    
+                    	// If no content, include the "No posts found" template.
+                    	else :
+                    		get_template_part( 'templates/page/content', 'none' );
+                    
+                    	endif;
+                    ?>
+                </div>
+        
+                <?php if( 'right' == $yog_layout && isset( $yog_sidebar ) && !empty( $yog_sidebar ) ){ ?>
+                    <div class="col-md-3 sidebar sidebar-left">
+                        <div class="sidebar-module-container">
+                            <?php 
+                                if( is_active_sidebar( yog_helper()->get_option( 'search-sidebar', 'raw', 'primary', 'options' ) ) ):
+                                    dynamic_sidebar( yog_helper()->get_option( 'search-sidebar', 'raw', 'primary', 'options' ) ); 
+                                endif;
+                            ?>
+                        </div>
+                    </div>
+                <?php } ?>
+                   
+            </div>
+        </div>
+     </div>      
+    <?php
+ get_footer(); 

@@ -1,0 +1,496 @@
+/*===================================================================================*/
+/*  Rating CSS
+/*===================================================================================*/
+
+.rateit {
+    display: -moz-inline-box;
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star.gif);
+    height: 14px;
+    outline: none;
+}
+
+.rateit-small .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star-small.png);
+    height: 14px;
+    outline: none;
+}
+
+.rateit .rateit-range * {
+    display:block;
+}
+
+/* for IE 6 */
+* html .rateit, * html .rateit .rateit-range
+{
+    display: inline;
+}
+
+/* for IE 7 */
+* + html .rateit, * + html .rateit .rateit-range
+{
+    display: inline;
+}
+
+.rateit .rateit-hover, .rateit .rateit-selected
+{
+    position: absolute;
+    left: 0px;
+}
+
+.rateit .rateit-hover-rtl, .rateit .rateit-selected-rtl
+{
+    left: auto;
+    right: 0px;
+}
+
+.rateit .rateit-hover
+{
+    background: url(images/star.gif) left -28px;
+}
+
+.rateit-small .rateit-hover
+{
+    background: url(images/star-small.png) left -328px;
+}
+
+.rateit .rateit-hover-rtl
+{
+    background-position: right -28px;
+}
+
+.rateit .rateit-selected
+{
+    background: url(images/star.gif) left -14px;
+}
+
+.rateit-small .rateit-selected
+{
+    background: url(images/star-small.png) left -14px;
+}
+
+.rateit .rateit-selected-rtl
+{
+    background-position: right -14px;
+}
+
+.rateit .rateit-preset
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit .rateit-preset-rtl
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit-small .rateit-preset
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit-small .rateit-preset-rtl
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit button.rateit-reset
+{
+    background: url(images/delete.gif) 0 0;
+    width: 14px;
+    height: 14px;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: left;
+    outline: none;
+    border:none;
+    padding: 0;
+}
+
+.rateit button.rateit-reset:hover, .rateit button.rateit-reset:focus
+{
+    background-position: 0 -14px;
+}
+
+.quantity-container + a.compare.button
+{
+    display: none!important;
+}
+
+/*===================================================================================*/
+/*  Rating CSS
+/*===================================================================================*/
+
+.rateit {
+    display: -moz-inline-box;
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star.gif);
+    height: 14px;
+    outline: none;
+}
+
+.rateit-small .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url(images/star-small.png);
+    height: 14px;
+    outline: none;
+}
+
+.rateit .rateit-range * {
+    display:block;
+}
+
+/* for IE 6 */
+* html .rateit, * html .rateit .rateit-range
+{
+    display: inline;
+}
+
+/* for IE 7 */
+* + html .rateit, * + html .rateit .rateit-range
+{
+    display: inline;
+}
+
+.rateit .rateit-hover, .rateit .rateit-selected
+{
+    position: absolute;
+    left: 0px;
+}
+
+.rateit .rateit-hover-rtl, .rateit .rateit-selected-rtl
+{
+    left: auto;
+    right: 0px;
+}
+
+.rateit .rateit-hover
+{
+    background: url(images/star.gif) left -28px;
+}
+
+.rateit-small .rateit-hover
+{
+    background: url(images/star-small.png) left -328px;
+}
+
+.rateit .rateit-hover-rtl
+{
+    background-position: right -28px;
+}
+
+.rateit .rateit-selected
+{
+    background: url(images/star.gif) left -14px;
+}
+
+.rateit-small .rateit-selected
+{
+    background: url(images/star-small.png) left -14px;
+}
+
+.rateit .rateit-selected-rtl
+{
+    background-position: right -14px;
+}
+
+.rateit .rateit-preset
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit .rateit-preset-rtl
+{
+    background: url(images/star.gif) left -48px;
+}
+
+.rateit-small .rateit-preset
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit-small .rateit-preset-rtl
+{
+    background: url(images/star-small.png) left -48px;
+}
+
+.rateit button.rateit-reset
+{
+    background: url(images/delete.gif) 0 0;
+    width: 14px;
+    height: 14px;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: left;
+    outline: none;
+    border:none;
+    padding: 0;
+}
+
+.rateit button.rateit-reset:hover, .rateit button.rateit-reset:focus
+{
+    background-position: 0 -14px;
+}
+
+.widget-woocommerce-currency-rates ul{
+   margin: 0px!important;
+}
+
+.widget-woocommerce-currency-rates li:first-child{
+   margin-top: 10px;
+}
+
+.widget-woocommerce-currency-rates li{
+    margin-bottom: 10px;
+}
+
+.widget-woocommerce-currency-rates li:last-child{
+    margin: 0px;
+}
+
+.woocs_converter_shortcode_amount,
+.woocs_converter_shortcode_results{
+    border: 1px solid #e5e5e5;
+    padding: 4px 12px;
+    width: 100%!important; 
+}
+
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+
+    p.stars a {
+        width: 100%!important;
+        margin-bottom: 5px;
+    }
+    
+    p.stars a:last-child{
+        margin-bottom: 0px;
+    }
+
+}
+
+.single-product div.product div.images {
+    margin-bottom: 2em
+}
+
+.single-product div.product div.images img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.single-product div.product div.images div.thumbnails {
+    padding-top: 1em
+}
+
+.single-product div.product div.images.woocommerce-product-gallery {
+    position: relative
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__wrapper {
+    -webkit-transition: all cubic-bezier(.795, -.035, 0, 1) .5s;
+    transition: all cubic-bezier(.795, -.035, 0, 1) .5s;
+    margin: 0;
+    padding: 0
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__wrapper .zoomImg {
+    background-color: #fff
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+    width: 25%;
+    display: inline-block
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__trigger {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    font-size: 2em;
+    z-index: 9;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    text-indent: -9999px;
+    border-radius: 100%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__trigger:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #000;
+    border-radius: 100%;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+.single-product div.product div.images .woocommerce-product-gallery__trigger:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #000;
+    border-radius: 6px;
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+.single-product div.product div.images .flex-control-thumbs {
+    overflow: hidden;
+    zoom: 1;
+    margin: 0;
+    padding: 0
+}
+
+.single-product div.product div.images .flex-control-thumbs li {
+    width: 25%;
+    float: left;
+    margin: 0;
+    list-style: none
+}
+
+.single-product div.product div.images .flex-control-thumbs li img {
+    cursor: pointer;
+    opacity: .5;
+    margin: 0
+}
+
+.single-product div.product div.images .flex-control-thumbs li img.flex-active,
+.single-product div.product div.images .flex-control-thumbs li img:hover {
+    opacity: 1
+}
+
+.single-product div.product .woocommerce-product-gallery--columns-3 .flex-control-thumbs li:nth-child(3n+1) {
+    clear: left
+}
+
+.single-product div.product .woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n+1) {
+    clear: left
+}
+
+.single-product div.product .woocommerce-product-gallery--columns-5 .flex-control-thumbs li:nth-child(5n+1) {
+    clear: left
+}
+
+.single-product div.product div.images{
+    width: 100%;
+}
+.flex-viewport{
+    border: 1px solid #e5e5e5;
+}
+.single-product div.product div.images .flex-control-thumbs{
+    margin: 15px 0 0;
+}
+.single-product div.product div.images .flex-control-thumbs li img{
+   border: 1px solid #e5e5e5; 
+}
+
+.single-product div.product div.images .flex-control-thumbs li{
+    
+    width: 24%;
+    margin-right: 3px;
+    margin-bottom: 2px;
+    float: none;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+.single-product div.product div.images .flex-control-thumbs li:last-child{
+    margin-right: 2px;
+}
+.single-product div.product div.images .flex-control-thumbs li .flex-active,
+.woocommerce div.product div.images .flex-control-thumbs li img:hover{
+    border: 1px solid #0f6cb2;
+}
+.single-product .comment-respond .title-review-comments{
+    margin-bottom: 0px!important;
+}
+
+.single-product .blog-write-comment{
+    padding: 0px!important;
+    box-shadow: none!important
+}
+.yamm .dropdown-menu li {
+    position: relative;
+}
+
+.links li:hover > ul {
+    left: calc(100% + 20px);
+}
+
+.links li:hover > ul:before {
+    content:"";
+    width:20px;
+    height:100%;
+    background:transparent;
+    position:absolute;
+    top:0;
+    left:-20px;
+}
+@media only screen and (min-width: 250px) and (max-width: 767px) {
+    ul.links > li:hover > ul ,
+    ul.links > li > ul {
+        position: relative;
+        left: 0;
+        box-shadow: none;
+    }
+    
+    .yamm .dropdown-menu.pages {
+        display: none;
+    }
+    
+    .yamm .dropdown:hover .dropdown-menu.pages {
+        display: block;
+    }
+}
